@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 console.log(__dirname);
 console.log(__dirname + "/../client/");
-const NODE_PORT = process.env.PORT;
+const NODE_PORT = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + "/../client/"));
 
@@ -115,7 +115,7 @@ app.get("/reset-quiz", function(req, res){
 app.post("/submit-quiz", function(req, res) {
 
     //console.log("Received user object " + req.body);
-    //console.log("Received user object " + JSON.stringify(req.body));
+    console.log("Received user object " + JSON.stringify(req.body));
     
     var quiz = req.body;
     var checking = quizes[quiz.id];

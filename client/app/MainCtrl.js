@@ -9,6 +9,8 @@
 
         var app = angular.module("PopQuizApp").controller("PopQuizCtrl", PopQuizCtrl);
 
+        PopQuizCtrl.$inject = ["$http"];
+
         function PopQuizCtrl($http) {
             var self = this; // vm
     
