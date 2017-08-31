@@ -1,6 +1,10 @@
 /**
- * Server side code.
+ * Title        :   Main Server Side Application
+ * Author       :   Julien Bongars
+ * Date         :   31/08/2017
+ * Comments     :   Main Application for server side application
  */
+
 "use strict";
 console.log("Starting...");
 var express = require("express");
@@ -68,6 +72,7 @@ var quizes = [{
     }
 ];
 
+
 //var protoQuizes = quizes.clone();
 var protoQuizes = Object.assign([], quizes);
 var protoAnswers = [];
@@ -78,7 +83,9 @@ app.get("/popquizes", function(req, res) {
     //console.log(JSON.stringify(protoQuizes));
     
     if(protoQuizes.length == 0){
-        protoQuizes = Object.assign([], quizes);
+        protoQuizes = Object.assign([], {
+            quizes: quizes, num: quizes.length
+        });
         console.log("Quiz is done!");
 
         res.json({"done": true})
@@ -93,7 +100,9 @@ app.get("/popquizes", function(req, res) {
         var index = protoQuizes.indexOf(quiz);
         protoQuizes.splice(index, 1);
 
-        res.json(quiz);
+        var response = {quiz: quiz, num: quizes.length};
+
+        res.json(response);
     }
 });
 
