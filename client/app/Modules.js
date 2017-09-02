@@ -4,6 +4,6 @@
 (function() {
 
     "use strict";
-    var app = angular.module("PopQuizApp", []);
+    var PopQuizApp = angular.module("PopQuizApp", []);
 
 })();

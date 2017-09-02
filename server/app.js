@@ -81,9 +81,9 @@ app.get('/next', function(req, res){
 
         protoQuizes = Object.assign([], quizes);
         console.log("Quiz is done!");
-        res.json({"done": true});
+        //res.json({"done": true});
 
-    } else {
+    } else {s
 
         var index = Math.floor(Math.random() * protoQuizes.length);
         var quiz = protoQuizes[index];
@@ -108,8 +108,23 @@ app.get('/quiz', function(req, res){
 app.post('/submit', function(req, res){
     var result = req.body;
 
-    //this gets a bit wierd.. requires configuration of front end
+    if(result.answer != undefined){
+        result.isCorrect = 
+            (result.answer == 
+                quizes.filter(
+                    function(obj){
+                        return obj.id == result.id;
+                    }
+                ).answer
+            );
 
+        res.status(200).json(result);
+    } 
+});
+
+app.get('/reset', function(req, res){
+    var protoQuizes = Object.assign([], quizes);
+    //res.send("done!");
 });
 
 

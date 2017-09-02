@@ -5,3 +5,7 @@
     border-bottom: thin solid #ddd;
     padding: 20px 0;
 }
+
+h2 {
+    font-size: 18px;
+}

@@ -14,10 +14,24 @@
     
     <div ng-controller="PopQuizCtrl as ctrl" class="col-sm-8 col-lg-4 popquiz-page">
         <h1> POP QUIZ </h1>
+        <h2>{{ctrl.currentQuiz.question}}</h2>
+        <p>{{ctrl.currentQuizNum}} of {{ctrl.currentQuiz.total}}</p>
 
-        <form name="popquizForm" ng-submit="ctrl.submitQuiz()" novalidate>
+        <form name="popquizForm" ng-submit="ctrl.submit()" novalidate>
+
+            <div ng-repeat="answer in ctrl.currentQuiz.answers">
+                <input name="answer" ng-model="ctrl.currentQuiz.answer" type="radio" value="{{answer.name}}" /> {{answer.name}}
+            </div>
             
+            <br/>
+            <div>
+                <input type="submit" id="submit" name="submit" class="btn btn-success" />
+                <button id="next" type="button" ng-click="ctrl.next()" class="btn btn-primary">next</button>
+            </div>
+            </div>
         </form>
+
+
 
         <br/>
 

@@ -1,0 +1,29 @@
+[33mcommit a38fb7452be74ead3cfb3944c9c72bdf1c4584ac[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Julien Bongars <julienbongars23@gmail.com>
+Date:   Sat Sep 2 21:05:23 2017 +0800
+
+    redid backend to new specifications
+
+[33mcommit 979d75eef5d34be6ae0ada3d551af1be8415de51[m
+Author: minh <minh@voyagerinnovation.com>
+Date:   Thu Aug 31 12:05:12 2017 +0800
+
+    reset project (to do at home)
+
+[33mcommit d4afae90cfd23adfa187063518a29b5af8a0c0d1[m[33m ([m[1;31morigin/failedProject[m[33m)[m
+Author: minh <minh@voyagerinnovation.com>
+Date:   Thu Aug 31 11:58:31 2017 +0800
+
+    Final changes (problem not fixed)
+
+[33mcommit b594c5e98c33c959212da73ee7378ef7767ae14e[m
+Author: minh <minh@voyagerinnovation.com>
+Date:   Thu Aug 31 11:51:06 2017 +0800
+
+    changes to server/ client
+
+[33mcommit 6c10c1022f0c2d9b0f6ed1dd7a907568d562e7f1[m
+Author: minh <minh@voyagerinnovation.com>
+Date:   Wed Aug 30 17:24:34 2017 +0800
+
+    first commit
