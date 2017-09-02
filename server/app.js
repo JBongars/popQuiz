@@ -72,12 +72,50 @@ var quizes = [{
     }
 ];
 
-
 //var protoQuizes = quizes.clone();
 var protoQuizes = Object.assign([], quizes);
-var protoAnswers = [];
+
+app.get('/next', function(req, res){
+
+    if(protoQuizes.length == 0){
+
+        protoQuizes = Object.assign([], quizes);
+        console.log("Quiz is done!");
+        res.json({"done": true});
+
+    } else {
+
+        var index = Math.floor(Math.random() * protoQuizes.length);
+        var quiz = protoQuizes[index];
+        protoQuizes.splice(index, 1);
+
+        quiz.done = false;
+        quiz.total = quizes.length;
+
+        res.json(quiz);
+    }
+});
+
+app.get('/quiz', function(req, res){
+    var id = req.param('id');
+    var quiz = quizes.filter(function(obj){return obj.id == id;});
+    quiz.done = false;
+    quiz.total = quizes.length;
+
+    res.json(quiz);
+});
+
+app.post('/submit', function(req, res){
+    var result = req.body;
+
+    //this gets a bit wierd.. requires configuration of front end
+
+});
 
 
+
+
+/*
 app.get("/popquizes", function(req, res) {
 
     //console.log(JSON.stringify(protoQuizes));
@@ -133,6 +171,7 @@ app.post("/submit-quiz", function(req, res) {
     res.status(200).json(quiz);
 });
 
+*/
 
 app.use(function(req, res) {
     res.send("<h1>!!!! Page not found ! ! !</h1>");
